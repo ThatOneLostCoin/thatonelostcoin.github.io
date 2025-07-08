@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');
+
+:root {
+  --blue: #1E90FF;
+  --gray: #f5f5f5;
+  --bg-dark: #1c1c1c;
+  --bg-card: #ffffff;
+  --text-dark: #111;
+  --text-light: #f0f0f0;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  text-decoration: none;
+}
+
+body {
+  background: linear-gradient(135deg, #6a9bd2, #4a7ba7);
+  min-height: 100vh;
+  color: var(--text-dark);
+  padding: 1rem; /* Add base padding to body */
+}
+
+/* Botões */
+.button {
+  padding: 0.6em 1.5em;
+  border-radius: 1em;
+  background-color: var(--blue);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+  display: inline-block;
+  white-space: nowrap;
+  /* Ensure minimum touch target size */
+  min-height: 44px;
+  min-width: 120px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.button:hover {
+  transform: scale(1.05);
+}
+
+/* Esconde elementos */
+.hide {
+  display: none;
+}
+
+/* Telas iniciais com fundo claro */
+.tela-inicial,
+.difficulty-select {
+  background: var(--bg-card);
+  color: var(--text-dark);
+  padding: 1.5em;
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto; /* Increased margin */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 1.2em;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.tela-inicial h1,
+.tela-inicial p,
+.difficulty-select h1 {
+  margin-bottom: 1.2em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.tela-inicial #start-button {
+  margin-bottom: 0.8em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tela-inicial #artigo {
+  margin-bottom: 3.5em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Créditos posicionados perto da borda inferior da caixa */
+#credits {
+  position: absolute;
+  bottom: 1em;
+  left: 1.5em;
+  right: 1.5em;
+  text-align: right;
+  font-size: 0.75em;
+  font-style: italic;
+  color: #555;
+  margin-top: 3em;
+}
+
+/* Botões de dificuldade alinhados na horizontal */
+.dificuldades {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+  margin-top: 1.5em;
+  flex-wrap: wrap;
+}
+
+/* Área do quiz */
+.display-principal {
+  background: var(--bg-card);
+  padding: 1em;
+  width: 90%;
+  max-width: 37.5em;
+  margin: 2rem auto; /* Increased margin */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 1.2em;
+  color: var(--text-dark);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.cabeçalho {
+  margin-bottom: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5em;
+  border-bottom: 0.1em solid #ccc;
+  font-size: large;
+  font-weight: bold;
+  min-height: 60px;
+}
+
+.contagem-de-questões {
+  text-align: left;
+  flex: 1;
+}
+
+#logo-UFRJ {
+  text-align: right;
+  flex: 1;
+}
+
+#card {
+  padding: 1.5em;
+  text-align: center;
+}
+
+#question {
+  margin-bottom: 1.5em;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
+}
+
+#options .button {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.4;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tela de pontuação final - agora com fundo claro como as outras páginas */
+.pontuação {
+  background: var(--bg-card);
+  color: var(--text-dark);
+  padding: 1.5em;
+  width: 90%;
+  max-width: 600px;
+  margin: 2rem auto; /* Increased margin */
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 1.2em;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+#user-score {
+  margin-bottom: 1em;
+}
+
+/* Estilo para opção selecionada */
+.button.selected {
+  background-color: #FFD700;
+  color: #333;
+  border: 2px solid #FFA500;
+  transform: scale(1.02);
+}
+
+/* Estilo para respostas corretas/incorretas */
+.correct {
+  background-color: #e7f6d5;
+  color: #689f38;
+  border-color: #689f38;
+}
+
+.incorrect {
+  background-color: #ffdde0;
+  color: #d32f2f;
+  border-color: #d32f2f;
+}
+
+/* Media Queries para Mobile-First */
+
+/* Tablets e telas pequenas */
+@media (min-width: 768px) {
+  body {
+    padding: 1.5rem;
+  }
+  
+  .tela-inicial,
+  .difficulty-select,
+  .pontuação {
+    padding: 2em;
+    width: 85%;
+    margin: 3rem auto;
+  }
+  
+  .display-principal {
+    padding: 1em 1.5em;
+    width: 80%;
+    margin: 3rem auto;
+  }
+  
+  .cabeçalho {
+    font-size: x-large;
+  }
+  
+  .dificuldades {
+    gap: 1em;
+  }
+  
+  #logo-UFRJ img {
+    width: 150px;
+  }
+}
+
+/* Desktops e telas grandes */
+@media (min-width: 1024px) {
+  body {
+    padding: 2rem;
+  }
+  
+  .tela-inicial,
+  .difficulty-select,
+  .pontuação {
+    padding: 2.5em;
+    width: 75%;
+    margin: 4rem auto;
+  }
+  
+  .display-principal {
+    padding: 1.5em 2em;
+    width: 70%;
+    margin: 4rem auto;
+  }
+  
+  .button {
+    padding: 0.8em 2em;
+    font-size: 1.1em;
+  }
+  
+  #question {
+    font-size: 1.3em;
+  }
+  
+  .dificuldades {
+    gap: 1.5em;
+  }
+}
+
+/* Telas muito pequenas - IMPROVED */
+@media (max-width: 480px) {
+  body {
+    padding: 0.5rem;
+  }
+  
+  .tela-inicial,
+  .difficulty-select,
+  .pontuação {
+    padding: 1.2em;
+    width: 95%;
+    margin: 1rem auto;
+  }
+  
+  .tela-inicial h1,
+  .difficulty-select h1 {
+    font-size: 1.4em;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+  
+  .tela-inicial #artigo {
+    font-size: 0.9em;
+    white-space: normal;
+    max-width: none;
+  }
+  
+  .display-principal {
+    padding: 1em;
+    width: 95%;
+    margin: 1rem auto;
+  }
+  
+  /* Keep buttons readable on mobile */
+  .button {
+    padding: 0.7em 1.4em; /* Increased from 0.5em 1.2em */
+    font-size: 0.95em; /* Increased from 0.9em */
+    min-height: 44px; /* Ensure touch-friendly size */
+  }
+  
+  .cabeçalho {
+    font-size: medium;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.5em;
+  }
+  
+  .contagem-de-questões {
+    text-align: center;
+    flex: none;
+  }
+  
+  #logo-UFRJ {
+    text-align: center;
+    flex: none;
+  }
+  
+  #logo-UFRJ img {
+    width: 120px;
+  }
+  
+  #question {
+    font-size: 1.1em; /* Slightly larger for readability */
+  }
+  
+  .dificuldades {
+    gap: 0.8em; /* Increased gap */
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #options .button {
+    width: 100%;
+    max-width: 320px;
+    min-height: 50px;
+  }
+  
+  #credits {
+    font-size: 0.7em; /* Slightly larger */
+  }
+}
