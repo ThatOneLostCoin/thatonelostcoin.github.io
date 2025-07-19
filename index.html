@@ -8,12 +8,13 @@
   <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
   <div class="tela-inicial">
     <h1>Quiz sobre Reatores Embarcados</h1>
     <p>Teste seus conhecimentos sobre Reatores Nucleares Embarcados com o nosso quiz!</p>
     <button id="start-button" class="button">Começar</button>
-    <a href="link goes here"><button id="artigo" class="button">Veja nosso artigo aqui</button></a>
+    <a href="assets/folder.pdf" download><button id="artigo" class="button">Baixe nosso folder</button></a>
     <footer id="credits">
       <p>Made by Felippe Karim and Rafaela Czelusniak, 2025.</p>
     </footer>
@@ -29,14 +30,15 @@
   </div>
 
   <div class="display-principal hide">
-    <div class="cabeçalho">
+    <div class="cabeçalho hide">
       <div class="contagem-de-questões">
         <span class="rep_display">Questão 1 de 25</span>
       </div>
       <div id="logo-UFRJ">
-        <img alt="logo" src="https://ufrj.br/wp-content/uploads/2024/01/ufrj-horizontal-cor-rgb-completa-telas.png" width="150px">
+        <img alt="Logo UFRJ" src="https://ufrj.br/wp-content/uploads/2024/01/ufrj-horizontal-cor-rgb-completa-telas.png" width="150px">
       </div>
     </div>
+
     <div id="card">
       <div id="question">
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta, iure.</p>
@@ -48,6 +50,12 @@
         <button id="D" class="button">Lorem, ipsum dolor sit amet.</button>
       </div>
     </div>
+
+    <div class="flash hide">
+      <p id="flash-question">Lorem ipsum dolor sit amet..</p>
+      <p id="flash-correct">Lorem ipsum dolor sit..</p>
+      <button class="next">Próxima</button>
+    </div>
   </div>
 
   <div class="pontuação hide">
@@ -56,5 +64,7 @@
   </div>
 
   <script src="scripts.js"></script>
+  <noscript>Ops! Seu navegador atual não suporta JavaScript.</noscript>
+
 </body>
 </html>
