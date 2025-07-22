@@ -32,20 +32,20 @@ let alternatives = []; //Same.
 let choice = null; //Same. Those are here to avoid block scope issues later on.
 
 let Questions = [ //Questions and options matrix
-    ['Qual uma das desvantagens dos navios cargueiros atuais?',
+    ['Qual uma das maiores desvantagens dos navios cargueiros atuais?',
         'São muito poluentes',
         'São muito caros',
         'São pouco utilizados',
         'São pouco seguros',
-        'Os navios cargueiros atuais usam combustíveis fósseis muito poluentes e nocivos ao meio ambiente, tornando-os pouco eficazes e um problema para nosso ecossistema.'
+        'Os navios cargueiros atuais usam combustíveis fósseis muito poluentes e nocivos ao meio ambiente, o que faz com que tais navios se tornem pouco eficazes e um problema para nosso ecossistema.'
     ], //Q1
 
-    ['Que tipo de combustível um reator usa?',
+    ['Que tipo de combustível um reator nuclear usa?',
         'Material físsil',
         'Hidrogênio',
         'Carvão mineral',
         'Amônia verde',
-        'Reatores nucleares de fissão utilizam um combustível capaz de ter seus átomos partidos, liberando energia na forma de calor. Tais materiais são chamados físseis pois podem passar pelo processo citado.'
+        'Reatores nucleares de fissão utilizam um combustível capaz de ter os núcleos de seus átomos partidos, liberando muita energia que, posteriormente, é convertida em calor. Tais materiais são chamados físseis pois podem passar pelo processo citado.'
     ], //Q2
 
     ['Por que os reatores da Geração IV são mais seguros?',
@@ -53,7 +53,7 @@ let Questions = [ //Questions and options matrix
         'São menos potentes, então não explodem',
         'Não emitem radiação em caso de falha',
         'Operam em altas pressões, o que os torna mais estáveis em condição de risco',
-        'Os reatores da Geração IV possuem salvaguardas passivas, capazes de desligá-los em caso de acidentes ou falhas e operam em pressão baixa, o que os torna menos propensos a causar acidentes graves.'
+        'Os reatores da Geração IV possuem salvaguardas passivas, que atuam por si só e são capazes de desligá-los em caso de acidentes ou falhas. Além disso, tais reatores operam em pressão baixa, o que os torna menos propensos a causar acidentes graves.'
     ], //Q3
 
     ['Nos novos reatores embarcados, quem ficaria responsável pelo reprocessamento do resíduo nuclear?',
@@ -85,7 +85,7 @@ let Questions = [ //Questions and options matrix
         'Estado supercrítico',
         'Estado subcrítico',
         'Estado de fusão',
-        'O estado crítico é definido como o ponto de equilíbrio onde a taxa de produção de nêutrons é igual à taxa de perda, resultando em uma reação em cadeia autossustentável e uma potência constante. O estado subcrítico ocorre quando se tem menos nêutrons do que o necessário para a reação se autossustentar, fazendo com que ela cesse, e o supercrítico quando se tem excesso de nêutrons, acelerando a reação. Por fim, fusão trata-se de um tipo totalmente diferente de reação, uma tecnologia que, possivelmente, ainda está por vir.'
+        'Em termos simples, pense em um reservatório de água que é preenchido por um cano ligado a uma bomba e esvaziado por um ralo: se a quantidade de água que sai pelo ralo for a mesma que entra através do cano, o nível da água permanece o mesmo, se sai mais pelo ralo do que entra pelo cano, ele desce e se entra mais pelo cano do que sai pelo ralo, ele sobe. Reações nucleares seguem, por mais incrível que pareça, o mesmo princípio. Na analogia citada, a água que sai são os nêutrons absorvidos, a que entra são os gerados e o nível da água é a potência do reator; se mais nêutrons são gerados do que absorvidos, a reação acelera e a potência sobe, se menos nêutrons são gerados do que absorvidos, a reação desacelera e a potência cai e, o estado especial em que a taxa de perda é igual à taxa de ganho se chama de "estado crítico", quando a reação se sustenta sozinha sem nem sair do controle, nem perder potência.'
     ], //Q7
 
     ['Qual é o tipo de reator nuclear mais comum no mundo, constituindo a base para a propulsão naval militar e para as usinas de Angra 1 e 2?',
@@ -101,7 +101,7 @@ let Questions = [ //Questions and options matrix
         'O uso de combustíveis mais potentes, como o plutônio',
         'A eliminação completa dos sistemas de segurança',
         'A operação em temperaturas muito mais baixas que os reatores convencionais',
-        'A abordagem SMR substitui a construção sob medida no local pela fabricação de componentes em um ambiente de fábrica controlado, visando reduzir custos através da padronização'
+        'A abordagem SMR substitui a construção sob medida no local pela fabricação de componentes em um ambiente de fábrica controlado, visando reduzir custos através da padronização. Veja da seguinte forma: o que sai mais barato, comprar um carro de uma fábrica ou mandarem construir o mesmo carro na sua garagem?'
     ], //Q9
 
     ['Qual é a principal razão pela qual a análise de ciclo de vida é importante na avaliação de combustíveis marítimos?',
@@ -109,7 +109,7 @@ let Questions = [ //Questions and options matrix
        'Ela considera apenas a eficiência do motor do navio',
        'É uma exigência apenas para navios que transportam petróleo',
        'Ela foca exclusivamente nos custos de produção do combustível',
-       'Essa abordagem é crucial porque captura todas as emissões associadas a um combustível, incluindo as da produção e do transporte, fornecendo, assim, uma medida precisa de seu impacto climático <b>total</b>.'
+       'Essa abordagem é crucial porque captura todas as emissões associadas a um combustível, incluindo as de sua produção e de seu transporte, fornecendo, assim, uma medida precisa de seu impacto climático <b>total</b>.'
     ], //Q10
 
     ['Qual o principal veículo de transporte internacional de bens comerciais?',
@@ -117,7 +117,7 @@ let Questions = [ //Questions and options matrix
         'Avião de carga',
         'Trem',
         'Caminhão',
-        'A maior parte das indústrias depende, eventualmente, de algum bem importado ou é focada em exportação e, em qualquer um destes casos, a opção mais economicamente viável é a do transporte marítimo em navios de grande capacidade. Em outros termos, eles suportam a indústria moderna na maior parte do mundo.'
+        'A maior parte das indústrias depende, eventualmente, de algum bem importado ou é focada em exportação e, em ambos os casos, a opção mais economicamente viável é a do transporte marítimo em navios de grande capacidade. Em outros termos, eles suportam a indústria moderna na maior parte do mundo.'
     ], //Q11
 
     ['Além de aplicações militares, existe uma frota de navios com propulsão nuclear em operação hoje, qual?',
@@ -144,12 +144,12 @@ let Questions = [ //Questions and options matrix
         'Estudos demonstram que as emissões de gases de efeito estufa da energia nuclear, desde a extração do minério até a operação das usinas e reatores embarcados, são extremamente baixas, comparáveis às das fontes renováveis como eólica e solar.'
     ], //Q14
 
-    ['Plantas Nucleares Flutuantes (FNPP) são um subconjunto de qual categoria de planta nuclear?',
-        'Plantas Nucleares Transportáveis',
-        'Plantas Nucleares Embarcadas',
-        'Plantas Nucleares Removíveis',
+    ['Usinas Nucleares Flutuantes (FNPP) são um subconjunto de qual categoria de usina nuclear?',
+        'Usinas Nucleares Transportáveis',
+        'Usinas Nucleares Embarcadas',
+        'Usinas Nucleares Removíveis',
         'Reatores Modulares Pequenos',
-        'Plantas Nucleares Flutuantes são apenas Plantas Nucleares Transportáveis feitas para operar sobre corpos de água, muitas vezes para que possam ser levadas de uma localização a outra em que sejam necessárias, algo que é mais prático e mais barato que construir uma central nuclear tradicional e diversas linhas de transmissão de energia. Sem contar que também são capazes de gerar calor para diversos fins, algo que não pode ser transmitido de uma central.'
+        'Usinas Nucleares Flutuantes são apenas Usinas Nucleares Transportáveis feitas para operar sobre corpos de água, muitas vezes para que possam ser levadas de uma localização a outra em que sejam necessárias, algo que é mais prático e mais barato que construir uma central nuclear tradicional e diversas linhas de transmissão de energia. Sem contar que também são capazes de gerar calor para diversos fins, algo que não pode ser transmitido de uma central.'
     ], //Q15 - Easy ends here
     
     ['Qual é a principal diferença entre um reator térmico e um reator rápido (FBR)?',
@@ -157,18 +157,18 @@ let Questions = [ //Questions and options matrix
         'Reatores térmicos são usados para aquecimento, enquanto reatores rápidos são para eletricidade',
         'Reatores térmicos usam plutônio, enquanto reatores rápidos usam urânio',
         'Reatores térmicos são experimentais, enquanto reatores rápidos são a tecnologia dominante',
-        'Após uma reação de fissão existem alguns tipos de nêutrons que podem ser gerados, dois tipos deles são: os rápidos, de energia, e os térmicos, de menor energia. Reatores rápidos utilizam os do primeiro tipo, enquanto os lentos utilizam o do segundo, daí seus respectivos nomes.'
+        'Após uma reação de fissão existem alguns tipos de nêutrons que podem ser gerados, dois destes tipos são: os rápidos, de maior energia, e os térmicos, de menor energia. Reatores rápidos utilizam nêutrons rápidos enquanto os térmicos utilizam nêutrons térmicos, daí seus respectivos nomes.'
     ], //Q16
 
-    ['Qual é a principal vantagem de segurança dos Reatores a Sal Fundido (MSR) e dos Reatores Rápidos Refrigerados a Chumbo (LFR) em comparação com os de Reatores de Água Pressurizada PWRs tradicionais?',
+    ['Qual é a principal vantagem de segurança dos Reatores a Sal Fundido (MSR) e dos Reatores Rápidos Refrigerados a Chumbo (LFR) em comparação com os de Reatores de Água Pressurizada (PWR) tradicionais?',
         'Operam próximo da pressão atmosférica',
         'Operam com urânio natural, eliminando a necessidade de enriquecimento',
         'Não produzem nenhum tipo de resíduo nuclear',
         'São significativamente menores e não requerem blindagem',
-        'Reatores de Geração IV como MSRs e LFRs operam em baixa pressão, o que elimina o risco de acidentes de alta pressão e explosões de vapor, uma das principais preocupações de segurança com os PWRs.'
+        'Reatores MSR e LFR operam em baixa pressão, o que elimina o risco de acidentes de alta pressão e explosões de vapor, uma das principais preocupações de segurança com os PWRs.'
     ], //Q17
 
-    ['Além do custo do reator, qual fator de custo operacional é projetado para ser significativamente <b>maior</b> em um navio nuclear em comparação com um navio convencional?',
+    ['Além do custo do reator, qual fator de custo operacional é projetado para ser significativamente maior em um navio nuclear em comparação com um navio convencional?',
         'Custos com a tripulação, que precisa ser maior e com treinamento especializado',
         'Custo de lubrificantes para o motor',
         'Taxas portuárias de atracação',
@@ -181,11 +181,11 @@ let Questions = [ //Questions and options matrix
         'Vaso de pressão do reator',
         'Varetas de combustível',
         'Gerador de vapor',
-        'As barras de controle, feitas de materiais como boro ou cádmio, são inseridas ou retiradas do núcleo para absorver nêutrons e, assim, controlar a taxa de fissão e a potência do reator'
+        'As barras de controle, feitas de materiais como boro ou cádmio, são inseridas ou retiradas do núcleo para absorver nêutrons e, assim, controlar a taxa de fissão e a potência do reator.'
     ], //Q19
 
     ['Qual é a principal função do pressurizador em um Reator de Água Pressurizada (PWR)?',
-        'Manter a alta pressão no circuito primário para evitar que a água ferva',
+        'Manter alta a pressão no circuito primário para evitar que a água ferva',
         'Gerar o vapor que aciona a turbina',
         'Resfriar a água do circuito secundário após passar pela turbina',
         'Filtrar e purificar a água do reator para remover impurezas',
@@ -209,11 +209,11 @@ let Questions = [ //Questions and options matrix
     ], //Q22
 
     ['O que significa o conceito de "Zona de Planejamento de Emergência (EPZ) contida no casco" para um navio nuclear?',
-        'Que, mesmo no pior acidente, a radiação perigosa não ultrapassaria os limites do navio, permitindo o acesso a portos',
+        'A radiação perigosa não ultrapassaria os limites do navio, mesmo no pior acidente, permitindo o acesso a portos',
         'Uma área designada para exercícios de emergência da tripulação',
         'A zona onde o reator pode ser ejetado em caso de emergência',
         'Uma área de exclusão de 50 km ao redor do navio em operação',
-        'Este conceito é crucial para a viabilidade comercial, pois garante que um acidente a bordo não exigiria planos de evacuação para as cidades portuárias, facilitando o acesso irrestrito aos portos.'
+        'Este conceito é crucial para a viabilidade comercial pois garante que um acidente a bordo não exigiria planos de evacuação para as cidades portuárias, facilitando o acesso irrestrito aos portos.'
     ], //Q23
 
     ['O que é o Urânio de Alto Ensaio e Baixo Enriquecimento (HALEU)?',
@@ -221,7 +221,7 @@ let Questions = [ //Questions and options matrix
         'Um tipo de combustível que não gera resíduos radioativos',
         'Urânio que só pode ser usado em reatores de fusão',
         'O mesmo que urânio empobrecido, usado para blindagem',
-        'O HALEU possui um enriquecimento maior que o LEU, mas ainda abaixo do limite de 20% para urânio altamente enriquecido (HEU). Ele permite projetos de reatores mais compactos e eficientes, mas sua cadeia de suprimentos ainda não está estabelecida comercialmente.'
+        'O HALEU possui um enriquecimento maior que o LEU, mas ainda abaixo do limite de 20% para urânio altamente enriquecido (HEU), permitindo projetos de reatores mais compactos e eficientes.'
     ], //Q24
 
     ['Qual modelo de negócio inovador permite que o armador pague por energia como um serviço (taxa por MWh), transferindo o risco do CAPEX para um fornecedor de tecnologia?',
@@ -229,7 +229,7 @@ let Questions = [ //Questions and options matrix
         'Fretamento por tempo',
         'Compra direta do reator',
         'Financiamento coletivo (crowdfunding)',
-        'O modelo de leasing ou PPA permite que o armador evite o alto CAPEX, pagando pela energia como um custo operacional, enquanto o fornecedor de tecnologia assume a propriedade e a responsabilidade pelo reator.'
+        'O modelo de leasing, ou PPA, permite que o armador evite o alto investimento de compra e manutenção, pagando pela energia como um custo operacional, enquanto o fornecedor de tecnologia assume a propriedade e a responsabilidade pelo reator.'
     ] //Q25 - Hard ends here
     ];
 
